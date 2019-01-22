@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#closeClick" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ToolBar prefHeight="40.0" prefWidth="200.0">
+        <items>
+          <Button mnemonicParsing="false" onAction="#lineClick">
+               <graphic>
+                  <ImageView fx:id="line" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/line24.gif" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="circle" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#circleClick">
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/circle24.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="54.0" layoutY="10.0" mnemonicParsing="false" onAction="#squareClick">
+               <graphic>
+                  <ImageView fx:id="square" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/rect24.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <ColorPicker fx:id="color_picker" onAction="#setColor" />
+        </items>
+      </ToolBar>
+      <AnchorPane prefHeight="535.0" prefWidth="800.0">
+         <children>
+            <Canvas fx:id="canvas_id" height="535.0" onMousePressed="#mouseClick" onMouseReleased="#mouseRelease" width="800.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
